@@ -1,2 +1,2 @@
 # Competitive-Programming
-Use solutions as a reference, don't copy, thanks :)
+My Solutions, I have a lot more solutions on my local system....
