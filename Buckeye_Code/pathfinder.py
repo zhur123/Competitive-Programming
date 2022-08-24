@@ -1,39 +1,33 @@
-import heapq
-
-
 standard_input = '''3
-1 1 5
-0 3 0
-1 4 0'''
+1 4 5
+2 0 1
+3 4 1
+'''
 
 
 def solve(n):
     global arr
-    global heap
-    global min
-    while(len(heap) > 0):
-        (count, (x, y)) = heapq.heappop(heap)
-        if count > min:
-            break
-        if x == n - 1 and y == n - 1:
-            if count < min:
-                min = count
-        elif x == n - 1:
-            heapq.heappush(heap, (count + arr[x][y + 1], (x, y + 1)))
-        elif y == n - 1:
-            heapq.heappush(heap, (count + arr[x + 1][y], (x + 1, y)))
-        else:
-            heapq.heappush(heap, (count + arr[x + 1][y], (x + 1, y)))
-            heapq.heappush(heap, (count + arr[x][y + 1], (x, y + 1)))
-    pass
+    global dp
+    for i in range(n):
+        for j in range(n):
+            if i == 0 and j == 0:
+                pass
+            elif i == 0:
+                dp[i][j] += dp[i][j-1]
+            elif j == 0:
+                dp[i][j] += dp[i-1][j]
+            else:
+                above = dp[i-1][j]
+                left = dp[i][j-1]
+                if(above < left):
+                    dp[i][j] += above
+                else:
+                    dp[i][j] += left
 
 n = int(input())
-arr = []
+dp = []
 for i in range(n):
-    arr.append([n for n in map(int, input().split())])
-heap = []
-heapq.heapify(heap)
-heapq.heappush(heap, (arr[0][0], (0, 0)))
-min = 1000000000000000000000000000
+    row = [n for n in map(int, input().split())]
+    dp.append(row)
 solve(n)
-print(min)
+print(dp[n-1][n-1])

@@ -1,6 +1,6 @@
 import java.util.*;
  
-public class modulus11_2 {
+public class modulus11 {
 	
 	// Private Static Methods Starts Here
  

@@ -3,7 +3,7 @@ import java.util.*;
 /*
 	Uses ArrayLists
 */
-public class discoveringthedictionaryLONG {
+public class discoveringthedictionary {
 	
 	// Private Static Methods Starts Here
  

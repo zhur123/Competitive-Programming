@@ -1,6 +1,6 @@
 import java.util.*;
  
-public class lookingforprimes5 {
+public class lookingforprimes {
 	
 	// Private Static Methods Starts Here
  

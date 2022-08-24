@@ -4,7 +4,7 @@ import java.util.*;
 	O(n) prime checker
 */
 
-public class LookingforprimesOn {
+public class lookingforprimes2 {
 	
 	// Private Static Methods Starts Here
  

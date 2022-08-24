@@ -24,12 +24,15 @@ public class rpncalculator {
         // Code Starts Here
         int n = Integer.parseInt(sc.nextLine());
         Stack<Integer> stack = new Stack<>();
+        stack.push(0);
         for (int i = 0; i < n; i++) {
             String op = sc.nextLine();
             if (op.equals("+")) {
                 stack.push(stack.pop() + stack.pop());
             } else if (op.equals("-")) {
-                stack.push(stack.pop() - stack.pop());
+            	int num = stack.pop();
+                int num2 = stack.pop();
+                stack.push(num2 - num);
             } else if (op.equals("*")) {
                 stack.push(stack.pop() * stack.pop());
             } else if (op.equals("/")) {
@@ -43,7 +46,7 @@ public class rpncalculator {
                 int num2 = stack.pop();
                 stack.push(num);
                 stack.push(num2);
-            } else if (Character.isDigit(op.charAt(0))) {
+            } else {
                 if (stack.size() != 0) {
                     stack.pop();
                 }
